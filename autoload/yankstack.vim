@@ -82,10 +82,10 @@ endfunction
 
 function! s:paste_from_yankstack(key, mode)
   if a:mode == 'n'
-    silent exec 'normal!' a:key
+    silent exec 'normal' a:key
   elseif a:mode == 'v'
     let head = s:get_yankstack_head()
-    silent exec 'normal! gv' . a:key
+    silent exec 'normal gv' . a:key
     call s:set_yankstack_head(head)
 
   " In insert mode, this function's return value is used in an
